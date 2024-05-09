@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_primary"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/shareButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- CardView for User Info -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#146FD3"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sam"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewUsername"
+                        android:layout_marginTop="8dp"
+                        android:text="test@test.com"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/userphoto"
+                        android:layout_marginLeft="220dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CardView for Notifications -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewNotifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#48E3D1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/textViewNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Display any important information here"
+                    android:textColor="#040404"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Dynamic Cards for Questions and Answers -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#146FD3"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/textViewTotalQuestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Total Questions\n\n10"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="21sp"
+                        android:textStyle="bold"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#146FD3"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginStart="4dp">
+
+                    <TextView
+                        android:id="@+id/textViewCorrectlyAnswered"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Correctly Answered\n\n10"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="21sp"
+                        android:textStyle="bold"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Share Button at the Bottom -->
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/my_secondary"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_margin="8dp"/>
+</RelativeLayout>
